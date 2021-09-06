@@ -8,7 +8,6 @@ import java.net.URI;
 public class NotFoundException extends AbstractThrowableProblem {
 
 
-
     public NotFoundException(String message) {
         super(URI.create("worldrecord/not-found"),
                 message,
