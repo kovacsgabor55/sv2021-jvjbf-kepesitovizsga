@@ -20,4 +20,9 @@ public class RecorderService {
         return mapper.map(item, RecorderDto.class);
     }
 
+    public Recorder getById(Long id){
+        return repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Recorder not found"));
+    }
+
 }

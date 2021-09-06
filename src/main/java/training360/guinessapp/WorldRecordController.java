@@ -3,10 +3,7 @@ package training360.guinessapp;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import training360.guinessapp.dto.RecorderCreateCommand;
-import training360.guinessapp.dto.RecorderDto;
-import training360.guinessapp.dto.WorldRecordCreateCommand;
-import training360.guinessapp.dto.WorldRecordDto;
+import training360.guinessapp.dto.*;
 
 import javax.validation.Valid;
 
@@ -21,5 +18,11 @@ public class WorldRecordController {
     @ResponseStatus(HttpStatus.CREATED)
     public WorldRecordDto create(@Valid @RequestBody WorldRecordCreateCommand command) {
         return service.create(command);
+    }
+
+    @PutMapping("worldrecords/{id}/beatrecords")
+    @ResponseStatus(HttpStatus.OK)
+    public BeatWorldRecordDto update(@PathVariable Long id, @Valid @RequestBody BeatWorldRecordCommand command) {
+        return service.update(id, command);
     }
 }
