@@ -1,8 +1,6 @@
 package training360.guinessapp;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,15 +11,20 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 public class WorldRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NonNull
     private String description;
+    @NonNull
     private Double value;
+    @NonNull
     private String unitOfMeasure;
+    @NonNull
     private LocalDate dateOfRecord;
+    @NonNull
     private Long recorderId;
-
 }
