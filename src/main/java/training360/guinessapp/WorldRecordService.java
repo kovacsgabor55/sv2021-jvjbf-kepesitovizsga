@@ -35,7 +35,7 @@ public class WorldRecordService {
         String oldName = service.getById(wr.getId()).getName();
 
         Recorder recorder = service.getById(command.getWordRecorderId());
-        if (wr.getValue() >= command.getNewValue()) {
+        if (wr.getValue() > command.getNewValue()) {
             throw new NotBeatException("Can not beat");
         }
         BeatWorldRecordDto result = new BeatWorldRecordDto(
