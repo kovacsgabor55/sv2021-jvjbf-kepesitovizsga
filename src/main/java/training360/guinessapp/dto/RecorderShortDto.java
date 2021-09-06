@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecorderShortDto {
-    private Long id;
     private String name;
     private LocalDate dateOfBirth;
 }

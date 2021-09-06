@@ -5,6 +5,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import training360.guinessapp.dto.RecorderCreateCommand;
 import training360.guinessapp.dto.RecorderDto;
+import training360.guinessapp.dto.RecorderShortDto;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -25,4 +28,7 @@ public class RecorderService {
                 .orElseThrow(() -> new NotFoundException("Recorder not found"));
     }
 
+    public List<RecorderShortDto> getRecorders() {
+        return repository.findAndSort();
+    }
 }
