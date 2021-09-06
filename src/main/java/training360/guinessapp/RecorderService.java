@@ -22,7 +22,7 @@ public class RecorderService {
 
     public Recorder getById(Long id){
         return repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Recorder not found"));
+                .orElseThrow(() -> new NotFoundException("Recorder not found"));
     }
 
 }

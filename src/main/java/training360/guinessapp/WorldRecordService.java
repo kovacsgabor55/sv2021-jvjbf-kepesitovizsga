@@ -36,8 +36,9 @@ public class WorldRecordService {
 
         Recorder recorder = service.getById(command.getWordRecorderId());
 
-        if (wr.getValue() > command.getNewValue()) {
-            throw new IllegalArgumentException("kisebb");
+        if (wr.getValue() < command.getNewValue()) {
+            System.out.println("itt");
+            throw new NotBeatException("Can not beat");
         }
 
         BeatWorldRecordDto result = new BeatWorldRecordDto(
@@ -52,6 +53,6 @@ public class WorldRecordService {
 
     public WorldRecord getById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Recorder not found"));
+                .orElseThrow(() -> new NotFoundException("World record not found"));
     }
 }
