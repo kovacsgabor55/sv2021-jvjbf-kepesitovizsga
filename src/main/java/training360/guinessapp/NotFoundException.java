@@ -12,8 +12,7 @@ public class NotFoundException extends AbstractThrowableProblem {
     public NotFoundException(String message) {
         super(URI.create("worldrecord/not-found"),
                 message,
-                Status.NOT_FOUND,
-                message
+                Status.NOT_FOUND
         );
     }
 }

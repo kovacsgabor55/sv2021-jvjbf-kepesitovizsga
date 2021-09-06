@@ -10,8 +10,7 @@ public class NotBeatException extends AbstractThrowableProblem {
     public NotBeatException(String message) {
         super(URI.create("worldrecord/not-beat"),
                 message,
-                Status.BAD_REQUEST,
-                message
+                Status.BAD_REQUEST
         );
     }
 }
